@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_player"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_attack"]
+radius = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_interact"]
+radius = 1.8
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh"]
+position = Vector3(0, 0.9, 0)
+
+[node name="AttackHitbox" type="Area3D" parent="Mesh"]
+position = Vector3(0, 0.9, -1.0)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/AttackHitbox"]
+shape = SubResource("SphereShape3D_attack")
+
+[node name="CameraArm" type="SpringArm3D" parent="."]
+position = Vector3(0, 1.4, 0)
+spring_length = 4.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraArm"]
+position = Vector3(0.4, 0, 0)
+
+[node name="InteractArea" type="Area3D" parent="."]
+position = Vector3(0, 0.9, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
+shape = SubResource("SphereShape3D_interact")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="RollTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="StaminaRegenTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="RollTimer" to="." method="_on_roll_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="StaminaRegenTimer" to="." method="_on_stamina_regen_timer_timeout"]

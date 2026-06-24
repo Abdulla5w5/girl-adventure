@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/enemy_base.tscn" id="2_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_hud"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(60, 0.5, 60)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="Mat_ground"]
+albedo_color = Color(0.35, 0.55, 0.3, 1)
+
+[node name="Level01" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="World"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ground"]
+position = Vector3(0, -0.25, 0)
+shape = SubResource("BoxShape3D_ground")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ground"]
+mesh = SubResource("PlaneMesh_ground")
+surface_material_override/0 = SubResource("Mat_ground")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 10, 0)
+light_energy = 1.4
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector3(0, 0.5, 0)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy01" parent="Enemies" instance=ExtResource("2_enemy")]
+position = Vector3(6, 0.5, 4)
+
+[node name="Enemy02" parent="Enemies" instance=ExtResource("2_enemy")]
+position = Vector3(-5, 0.5, 7)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

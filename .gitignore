@@ -1,0 +1,20 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot-specific exports / builds
+/build/
+/export/
+*.translation
+
+# macOS
+.DS_Store
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# Mono / C# (if ever added)
+.mono/
+data_*/
+mono_crash.*.json
