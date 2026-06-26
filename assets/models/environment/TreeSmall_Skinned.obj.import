@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1eggp1fdajrx"
+path="res://.godot/imported/TreeSmall_Skinned.obj-2def34b4d68d69772dca7c4b36c5d9e8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TreeSmall_Skinned.obj-2def34b4d68d69772dca7c4b36c5d9e8.mesh"]
+
+source_file="res://assets/models/environment/TreeSmall_Skinned.obj"
+dest_files=["res://.godot/imported/TreeSmall_Skinned.obj-2def34b4d68d69772dca7c4b36c5d9e8.mesh", "res://.godot/imported/TreeSmall_Skinned.obj-2def34b4d68d69772dca7c4b36c5d9e8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

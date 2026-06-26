@@ -17,9 +17,26 @@
 | Enemy scene | `scenes/enemies/enemy_base.tscn` | ✅ |
 | Level 01 (test world) | `scenes/world/level_01.tscn` | ✅ |
 
+## Original assets (extracted from "Adventures of Julia")
+
+Extracted into `assets/` as editable Godot resources:
+
+- **Character** → `assets/models/character/` (CC_Base_Body + clothing, hair, shoes, eyes) +
+  `assets/textures/character/`. Assembled in `scenes/player/character_model.tscn` and wired
+  into the player. Models came in **Z-up**, so the model root carries a -90 deg X rotation to
+  stand upright; tweak there if needed.
+- **Weapons** → `assets/models/weapons/` (swords, katana, shield, axe).
+- **Map kit** → `assets/models/environment/` (floors, fences, walls, roofs, lamps, plants,
+  trees, doors, props) + `assets/textures/environment/` diffuse maps. A sample set is placed
+  under `Level01 > Props`.
+- **Sprites / UI** → `assets/sprites/` (control icons, coin, logos, HUD bits).
+
+> Note: meshes were exported as static OBJ (bind pose) - no armature/skinning. To animate the
+> character you'll need to re-rig it in Blender, or swap in a rigged model.
+
 ## What to fill in when story is ready
 
-- **Character model** → drop your girl's 3D model into `assets/` and attach to `scenes/player/player.tscn > Mesh > MeshInstance3D`
+- **Character model** → already wired (`character_model.tscn`); swap meshes/textures or re-rig as needed
 - **Animations** → populate `AnimationPlayer` with: `idle`, `walk`, `run`, `crouch`, `jump`, `fall`, `roll`, `attack_light`, `attack_heavy`, `block`, `hurt`, `death`
 - **Dialogue system** → add a `DialogueManager` autoload (recommend the community "Dialogue Manager" plugin)
 - **Story chapters** → each chapter = one level scene under `scenes/world/`

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dybut1rkq5icd"
+path="res://.godot/imported/WallUp_A_2x.obj-9311c54161d6078d4970c0dacec505ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WallUp_A_2x.obj-9311c54161d6078d4970c0dacec505ae.mesh"]
+
+source_file="res://assets/models/environment/WallUp_A_2x.obj"
+dest_files=["res://.godot/imported/WallUp_A_2x.obj-9311c54161d6078d4970c0dacec505ae.mesh", "res://.godot/imported/WallUp_A_2x.obj-9311c54161d6078d4970c0dacec505ae.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
