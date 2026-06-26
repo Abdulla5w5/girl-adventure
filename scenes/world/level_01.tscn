@@ -23,12 +23,15 @@ size = Vector2(60, 60)
 albedo_color = Color(0.35, 0.55, 0.3, 1)
 
 [sub_resource type="StandardMaterial3D" id="mat_fence"]
+cull_mode = 2
 albedo_texture = ExtResource("10_fencetex")
 
 [sub_resource type="StandardMaterial3D" id="mat_lamp"]
+cull_mode = 2
 albedo_texture = ExtResource("11_lamptex")
 
 [sub_resource type="StandardMaterial3D" id="mat_bush"]
+cull_mode = 2
 albedo_texture = ExtResource("12_bushtex")
 
 [node name="Level01" type="Node3D"]

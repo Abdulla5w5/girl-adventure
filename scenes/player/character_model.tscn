@@ -14,19 +14,24 @@
 [ext_resource type="Texture2D" path="res://assets/textures/character/eye_n_tongue_tex.png" id="t_eye"]
 
 [sub_resource type="StandardMaterial3D" id="mat_body"]
+cull_mode = 2
 albedo_texture = ExtResource("t_body")
 
 [sub_resource type="StandardMaterial3D" id="mat_members"]
+cull_mode = 2
 albedo_texture = ExtResource("t_members")
 
 [sub_resource type="StandardMaterial3D" id="mat_hair"]
-albedo_texture = ExtResource("t_hair")
+cull_mode = 2
 transparency = 1
+albedo_texture = ExtResource("t_hair")
 
 [sub_resource type="StandardMaterial3D" id="mat_shoes"]
+cull_mode = 2
 albedo_texture = ExtResource("t_shoes")
 
 [sub_resource type="StandardMaterial3D" id="mat_eye"]
+cull_mode = 2
 albedo_texture = ExtResource("t_eye")
 
 [node name="CharacterModel" type="Node3D"]
