@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3]
+[gd_scene load_steps=27 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/enemy_base.tscn" id="2_enemy"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" path="res://assets/textures/environment/Lamps_d.png" id="11_lamptex"]
 [ext_resource type="Texture2D" path="res://assets/textures/environment/Plant_Bush_d.png" id="12_bushtex"]
 [ext_resource type="Texture2D" path="res://assets/textures/environment/Tree_Trunk_Tiled_d.png" id="13_treetex"]
+[ext_resource type="Texture2D" path="res://assets/textures/environment/floor_grass_d.png" id="14_grasstex"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
 
@@ -33,7 +34,8 @@ size = Vector3(60, 0.5, 60)
 size = Vector2(60, 60)
 
 [sub_resource type="StandardMaterial3D" id="Mat_ground"]
-albedo_color = Color(0.35, 0.55, 0.3, 1)
+albedo_texture = ExtResource("14_grasstex")
+uv1_scale = Vector3(20, 20, 1)
 
 [sub_resource type="StandardMaterial3D" id="mat_fence"]
 cull_mode = 2
