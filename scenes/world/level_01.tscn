@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene load_steps=26 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/enemy_base.tscn" id="2_enemy"]
@@ -12,6 +12,19 @@
 [ext_resource type="Texture2D" path="res://assets/textures/environment/Fence_Whitewood_d.png" id="10_fencetex"]
 [ext_resource type="Texture2D" path="res://assets/textures/environment/Lamps_d.png" id="11_lamptex"]
 [ext_resource type="Texture2D" path="res://assets/textures/environment/Plant_Bush_d.png" id="12_bushtex"]
+[ext_resource type="Texture2D" path="res://assets/textures/environment/Tree_Trunk_Tiled_d.png" id="13_treetex"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_energy = 1.0
+tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
 size = Vector3(60, 0.5, 60)
@@ -34,7 +47,26 @@ albedo_texture = ExtResource("11_lamptex")
 cull_mode = 2
 albedo_texture = ExtResource("12_bushtex")
 
+[sub_resource type="StandardMaterial3D" id="mat_tree"]
+cull_mode = 2
+albedo_texture = ExtResource("13_treetex")
+
+[sub_resource type="StandardMaterial3D" id="mat_mailbox"]
+cull_mode = 2
+albedo_color = Color(0.25, 0.32, 0.45, 1)
+metallic = 0.6
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="mat_sword"]
+cull_mode = 2
+albedo_color = Color(0.72, 0.74, 0.78, 1)
+metallic = 0.9
+roughness = 0.25
+
 [node name="Level01" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
 
 [node name="World" type="Node3D" parent="."]
 
@@ -46,7 +78,7 @@ shape = SubResource("BoxShape3D_ground")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ground"]
 mesh = SubResource("PlaneMesh_ground")
-surface_material_override/0 = SubResource("Mat_ground")
+material_override = SubResource("Mat_ground")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 10, 0)
@@ -73,26 +105,29 @@ position = Vector3(-5, 0.5, 7)
 [node name="Fence" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -4, 0, -5)
 mesh = ExtResource("5_fence")
-surface_material_override/0 = SubResource("mat_fence")
+material_override = SubResource("mat_fence")
 
 [node name="StreetLamp" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 5, 0, -6)
 mesh = ExtResource("6_lamp")
-surface_material_override/0 = SubResource("mat_lamp")
+material_override = SubResource("mat_lamp")
 
 [node name="Mailbox" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2, 0, -3)
 mesh = ExtResource("7_mailbox")
+material_override = SubResource("mat_mailbox")
 
 [node name="Bush" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2, 0, -3)
 mesh = ExtResource("8_bush")
-surface_material_override/0 = SubResource("mat_bush")
+material_override = SubResource("mat_bush")
 
 [node name="Tree" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7, 0, -7)
 mesh = ExtResource("9_tree")
+material_override = SubResource("mat_tree")
 
 [node name="SwordPickup" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.5, 1, 2)
 mesh = ExtResource("4_sword")
+material_override = SubResource("mat_sword")

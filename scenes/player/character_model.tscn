@@ -39,28 +39,28 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 
 [node name="Body" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_body")
-surface_material_override/0 = SubResource("mat_body")
+material_override = SubResource("mat_body")
 
 [node name="Top" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_top")
-surface_material_override/0 = SubResource("mat_members")
+material_override = SubResource("mat_members")
 
 [node name="Shorts" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_shorts")
-surface_material_override/0 = SubResource("mat_members")
+material_override = SubResource("mat_members")
 
 [node name="Hair" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_hair")
-surface_material_override/0 = SubResource("mat_hair")
+material_override = SubResource("mat_hair")
 
 [node name="Shoes" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_shoes")
-surface_material_override/0 = SubResource("mat_shoes")
+material_override = SubResource("mat_shoes")
 
 [node name="Eyes" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_eye")
-surface_material_override/0 = SubResource("mat_eye")
+material_override = SubResource("mat_eye")
 
 [node name="Teeth" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_teeth")
-surface_material_override/0 = SubResource("mat_body")
+material_override = SubResource("mat_body")
