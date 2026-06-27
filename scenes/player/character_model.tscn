@@ -35,7 +35,7 @@ cull_mode = 2
 albedo_texture = ExtResource("t_eye")
 
 [node name="CharacterModel" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 
 [node name="Body" type="MeshInstance3D" parent="."]
 mesh = ExtResource("m_body")

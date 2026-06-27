@@ -71,28 +71,28 @@ position = Vector3(-5, 0.5, 7)
 [node name="Props" type="Node3D" parent="."]
 
 [node name="Fence" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -4, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -4, 0, -5)
 mesh = ExtResource("5_fence")
 surface_material_override/0 = SubResource("mat_fence")
 
 [node name="StreetLamp" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 5, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 5, 0, -6)
 mesh = ExtResource("6_lamp")
 surface_material_override/0 = SubResource("mat_lamp")
 
 [node name="Mailbox" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2, 0, -3)
 mesh = ExtResource("7_mailbox")
 
 [node name="Bush" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2, 0, -3)
 mesh = ExtResource("8_bush")
 surface_material_override/0 = SubResource("mat_bush")
 
 [node name="Tree" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -7, 0, -7)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7, 0, -7)
 mesh = ExtResource("9_tree")
 
 [node name="SwordPickup" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.5, 1, 2)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.5, 1, 2)
 mesh = ExtResource("4_sword")
